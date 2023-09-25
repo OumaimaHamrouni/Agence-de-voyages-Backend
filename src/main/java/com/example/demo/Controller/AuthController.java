@@ -65,7 +65,6 @@ public class AuthController {
     authResponse.setPrenom(userBean.getPrenom());
     authResponse.setAdress(userBean.getAdress());
     authResponse.setId(userBean.getId());
-  System.out.print(user.getRoles());
     return ResponseEntity.ok(authResponse);
   }
   
@@ -143,7 +142,7 @@ public class AuthController {
 		// Create new user's account
 				User user = new User( signUpRequest.getUserName() ,
 						signUpRequest.getEmail(),
-						encoder.encode(signUpRequest.getPassword()) ,signUpRequest.getNom() , signUpRequest.getPrenom(), signUpRequest.getAdress());
+						encoder.encode(signUpRequest.getPassword()), signUpRequest.getAdress() ,signUpRequest.getNom() , signUpRequest.getPrenom());
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();

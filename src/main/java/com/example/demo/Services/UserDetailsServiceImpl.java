@@ -28,8 +28,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
    
     return CustomUserBean.createInstance(user);
   }
- /* public List<User>responsable() {
-		return userRepository.findresponsable();	}
+   
   
-  */
 }
